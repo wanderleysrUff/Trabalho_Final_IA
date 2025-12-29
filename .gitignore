@@ -1,0 +1,98 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Data files (não commitar datasets grandes)
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.zip
+data/processed/*.csv
+data/processed/*.pkl
+
+# Modelos treinados (geralmente muito grandes)
+results/models/*.pkl
+results/models/*.h5
+results/models/*.pt
+results/models/*.joblib
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kaggle
+kaggle.json
+
+# Temporary files
+*.tmp
+*.temp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environment variables
+.env
+.env.local
+
+# TensorFlow
+*.ckpt
+*.index
+*.meta
+checkpoint
+
+# Excluir mas manter estrutura de pastas
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!results/figures/.gitkeep
+!results/metrics/.gitkeep
+!results/models/.gitkeep
