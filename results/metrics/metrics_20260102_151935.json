@@ -1,0 +1,30 @@
+{
+    "timestamp": "20260102_151935",
+    "dataset": {
+        "name": "IBM HR Analytics",
+        "total_samples": 1470,
+        "features": 30,
+        "train_size": 1029,
+        "test_size": 441
+    },
+    "baseline": {
+        "name": "Baseline v2 (SMOTE)",
+        "accuracy": 0.8435374149659864,
+        "f1_score": 0.8214807659572722,
+        "auc_roc": 0.7652074609821089
+    },
+    "adversarial": {
+        "accuracy": 0.8616780045351474,
+        "f1_score": 0.8620680605988936
+    },
+    "fairness_baseline": {
+        "demographic_parity": 0.05951966585450748,
+        "disparate_impact": 2.0118343195266273,
+        "equal_opportunity": 0.06324786324786327
+    },
+    "fairness_adversarial": {
+        "demographic_parity": 0.05188391924817265,
+        "disparate_impact": 1.3618570778334094,
+        "equal_opportunity": 0.12051282051282053
+    }
+}
