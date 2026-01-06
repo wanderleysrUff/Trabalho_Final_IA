@@ -7,11 +7,11 @@ Trabalho Final - Disciplina de Inteligência Artificial
 Mestrado Profissional em Engenharia de Produção e Sistemas Computacionais  
 Universidade Federal Fluminense
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 Este projeto implementa técnicas de **Adversarial Debiasing** para mitigação de vieses em modelos de Machine Learning, utilizando o dataset **IBM HR Analytics Employee Attrition**. O objetivo é criar modelos de predição de rotatividade de funcionários que sejam justos em relação a atributos sensíveis como gênero e idade.
 
-### 🎯 Objetivos
+### Objetivos
 
 - Analisar vieses presentes em modelos de ML para predição de attrition
 - Implementar Adversarial Debiasing usando AIF360
@@ -20,7 +20,7 @@ Este projeto implementa técnicas de **Adversarial Debiasing** para mitigação 
 - Avaliar trade-offs entre performance e equidade
 - Utilizar SHAP para análise de explicabilidade
 
-## 📊 Dataset
+## Dataset
 
 **IBM HR Analytics Employee Attrition Dataset**
 
@@ -36,7 +36,7 @@ Este projeto implementa técnicas de **Adversarial Debiasing** para mitigação 
 - **Distribuição de gênero:** ~60% Male, ~40% Female
 - **Proxies identificados:** JobRole, Department (correlacionados com Gender)
 
-## 🏗️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 adversarial-debiasing-hr/
@@ -59,7 +59,7 @@ adversarial-debiasing-hr/
 └── LICENSE                            # Licença do projeto
 ```
 
-## 🔧 Instalação e Configuração
+## Instalação e Configuração
 
 ### Pré-requisitos
 
@@ -72,11 +72,11 @@ adversarial-debiasing-hr/
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/adversarial-debiasing-hr.git
-cd adversarial-debiasing-hr
+git clone https://github.com/wanderleysrUff/Trabalho_Final_IA.git
+cd Trabalho_Final_IA
 ```
 
-2. **Crie um ambiente virtual (recomendado):**
+2. **Crie um ambiente virtual:**
 
 ```bash
 # Windows
@@ -96,8 +96,6 @@ pip install -r requirements.txt
 
 4. **Baixe o dataset:**
 
-Opção 1 - Manual:
-
 - Acesse [Kaggle Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 - Baixe o arquivo CSV
 - Coloque em `data/raw/`
@@ -108,9 +106,7 @@ Opção 1 - Manual:
 
 ```bash
 # Ativar ambiente virtual
-venv\Scripts\activate     # Windows
-source venv/bin/activate  # Linux/Mac
-
+venv\Scripts\activate
 # Iniciar Jupyter
 jupyter notebook
 
@@ -125,7 +121,7 @@ jupyter notebook
 4. Selecione o kernel do ambiente virtual
 5. Execute as células sequencialmente
 
-### Opção 3: Python Específico (Windows)
+### Opção 3: Python Específico
 
 ```bash
 py -3.11 -m venv venv
@@ -191,7 +187,7 @@ Implementação usando AIF360 com otimização do parâmetro λ (adversary_loss_
 - Análise de proxies e suas relações com atributos sensíveis
 - Summary plots e feature importance
 
-## 📊 Resultados
+## Resultados
 
 ### Performance dos Modelos (Exemplo - Resultados variam por execução)
 
@@ -204,11 +200,11 @@ Implementação usando AIF360 com otimização do parâmetro λ (adversary_loss_
 
 ### Métricas de Fairness (Female vs Male)
 
-| Métrica                 | Baseline v2 | Adversarial (λ=0.5) | Melhoria       |
-| ----------------------- | ----------- | ------------------- | -------------- |
-| Demographic Parity Diff | 0.1139      | 0.0121              | ✅ 89% melhor  |
-| Disparate Impact        | 0.5444      | 1.0730              | ✅ Quase ideal |
-| Equal Opportunity Diff  | 0.0214      | 0.0821              | -              |
+| Métrica                 | Baseline v2 | Adversarial (λ=0.5) | Melhoria    |
+| ----------------------- | ----------- | ------------------- | ----------- |
+| Demographic Parity Diff | 0.1139      | 0.0121              | 89% melhor  |
+| Disparate Impact        | 0.5444      | 1.0730              | Quase ideal |
+| Equal Opportunity Diff  | 0.0214      | 0.0821              | -           |
 
 ### Grid Search de Lambda
 
@@ -222,33 +218,33 @@ O experimento demonstrou que:
 
 ### Principais Insights
 
-1. ✅ **Adversarial Debiasing reduziu significativamente o viés**
+1. **Adversarial Debiasing reduziu significativamente o viés**
 
    - Demographic Parity: ~0.11 → ~0.01-0.05 (redução de até 90%)
    - Disparate Impact próximo de 1.0 (ideal)
 
-2. ⚖️ **Trade-off aceitável ou inexistente:**
+2. **Trade-off aceitável ou inexistente:**
 
    - Em alguns casos, λ=0.5 manteve accuracy similar ao baseline
    - Em outros, λ=0.2 até SUPEROU o baseline em performance
    - Perda máxima de accuracy < 3% quando ocorre
 
-3. 🔍 **Proxies identificados:**
+3. **Proxies identificados:**
 
    - JobRole e Department correlacionam fortemente com Gender
    - Modelo adversarial aprende a ignorar esses atalhos
 
-4. 📊 **SMOTE vs class_weight:**
+4. **SMOTE vs class_weight:**
 
    - Ambas as abordagens são válidas
    - Baseline v2 (SMOTE) geralmente selecionado por melhor F1-Score
 
-5. 🎲 **Variabilidade estocástica:**
+5. **Variabilidade estocástica:**
    - Resultados variam ligeiramente entre execuções
    - Zona ótima de λ entre 0.2-0.5 consistentemente identificada
    - Demonstra robustez da metodologia
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Python 3.8+**
 - **Bibliotecas principais:**
@@ -262,7 +258,7 @@ O experimento demonstrou que:
   - `matplotlib 3.7+`, `seaborn 0.12+` - Visualizações
   - `jupyter` - Ambiente interativo
 
-## 📝 Configurações do Experimento
+## Configurações do Experimento
 
 Todas as configurações podem ser ajustadas no dicionário `CONFIG`:
 
@@ -279,18 +275,6 @@ CONFIG = {
 }
 ```
 
-## 📚 Referências
-
-1. **Zhang, B. H., Lemoine, B., & Mitchell, M. (2018).** _Mitigating Unwanted Biases with Adversarial Learning._ AIES 2018. [arXiv:1801.07593](https://arxiv.org/abs/1801.07593)
-
-2. **Bellamy, R. K. E., et al. (2019).** _AI Fairness 360: An extensible toolkit for detecting and mitigating algorithmic bias._ IBM Journal of Research and Development, 63(4/5).
-
-3. **Lundberg, S. M., & Lee, S. I. (2017).** _A Unified Approach to Interpreting Model Predictions._ NeurIPS 2017.
-
-4. **Hardt, M., Price, E., & Srebro, N. (2016).** _Equality of Opportunity in Supervised Learning._ NeurIPS 2016.
-
-5. **Chawla, N. V., et al. (2002).** _SMOTE: Synthetic Minority Over-sampling Technique._ Journal of Artificial Intelligence Research, 16, 321-357.
-
 ### Links Úteis
 
 - [AIF360 Documentation](https://aif360.readthedocs.io/)
@@ -299,7 +283,7 @@ CONFIG = {
 - [IBM HR Analytics Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 - [Imbalanced-Learn](https://imbalanced-learn.org/)
 
-## 🔬 Reprodutibilidade
+## Reprodutibilidade
 
 Para garantir reprodutibilidade dos resultados:
 
@@ -307,13 +291,13 @@ Para garantir reprodutibilidade dos resultados:
 2. **Eager execution desabilitada:** Necessário para AIF360
 3. **Versões fixas:** Use o `requirements.txt` fornecido
 
-**Nota:** Devido à natureza estocástica do Adversarial Debiasing (redes neurais), pequenas variações nos resultados são esperadas entre execuções. O grid search foi implementado justamente para identificar a zona robusta de hiperparâmetros.
+**Nota:** Devido à natureza estocástica do Adversarial Debiasing, pequenas variações nos resultados são esperadas entre execuções. O grid search foi implementado justamente para identificar a zona robusta de hiperparâmetros.
 
-## 💾 Resultados Salvos
+## Resultados Salvos
 
 Ao executar o notebook, os seguintes arquivos são gerados automaticamente em `results/`:
 
-### `figures/` (300 DPI)
+### `figures/`
 
 - Distribuição de Attrition
 - Análise de variáveis sensíveis (Gender, Age)
@@ -335,9 +319,10 @@ Ao executar o notebook, os seguintes arquivos são gerados automaticamente em `r
 - `scaler.pkl` - StandardScaler treinado
 - `label_encoders.pkl` - Encoders das variáveis categóricas
 
-## 👥 Autores
+## Autores
 
 **Christian Ferreira**
+**Penélope Witka**
 **Wanderley Rangel**
 
 **Orientador:** Prof. Dr. Leonard Barreto Moreira  
